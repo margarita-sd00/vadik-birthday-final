@@ -168,24 +168,24 @@ function startQuest(){go('riddle1')}
 function questAnswer(id,correct,message){document.getElementById('status-'+id).textContent=message;if(correct)document.getElementById('next-'+id).classList.remove('hidden')}
 const done={};
 function answer(n,a){const ok=(n===1&&a==='компас')||(n===2&&a==='медальон');document.getElementById('s'+n).textContent=ok?'Верно. Какооой умныый муж у меня':'Да уж.. Думать не хотим';if(ok){done[n]=true;document.getElementById('next'+n).classList.remove('hidden')}}
-function checkRita(){let v=document.getElementById('ritaAnswer').value.trim().toLowerCase().replaceAll('ё','е');if(v==='рита'){document.getElementById('s3').textContent='Контракт принят. Рита — не награда за квест, а любовь, с которой хочется пройти всю жизнь. ❤️';document.getElementById('next3').classList.remove('hidden')}else document.getElementById('s3').textContent='Имя спрятано в самом сердце. Попробуй ещё раз.'}
+function checkRita(){let v=document.getElementById('ritaAnswer').value.trim().toLowerCase().replaceAll('ё','е');if(v==='рита'){document.getElementById('s3').textContent='Контракт принят. Теперь отказаться от меня не получится❤️';document.getElementById('next3').classList.remove('hidden')}else document.getElementById('s3').textContent='Я что тебе, шутка какая-то?'}
 let held=null, selected=null;
 document.querySelectorAll('.item').forEach(el=>{el.addEventListener('dragstart',e=>{held=el;e.dataTransfer.setData('text/plain','item')});el.addEventListener('click',()=>{selected=el;document.querySelectorAll('.item').forEach(x=>x.style.outline='');el.style.outline='2px solid #f3cc7a'})});
 document.querySelectorAll('.drop').forEach(zone=>{zone.addEventListener('dragover',e=>e.preventDefault());zone.addEventListener('drop',e=>{e.preventDefault();if(held)zone.querySelector('.dropcontent').appendChild(held);held=null});zone.addEventListener('click',()=>{if(selected){zone.querySelector('.dropcontent').appendChild(selected);selected.style.outline='';selected=null}})});
 function checkSort(){let all=[...document.querySelectorAll('.item')],placed=all.filter(x=>x.closest('.drop'));let right=placed.filter(x=>x.dataset.owner===x.closest('.drop').dataset.drop).length;let status=document.getElementById('sortStatus');if(placed.length<all.length){status.textContent='В лагерях '+placed.length+' из '+all.length+' предметов. Разложи все находки.';return}if(right===all.length){status.textContent='Верно! Но вообще-то это все мои вещи';document.getElementById('next4').classList.remove('hidden')}else status.textContent='Верно '+right+' из '+all.length+'. Подумай, кому действительно принадлежит каждый предмет.'}
-const wishes=['Ты мой любимый человек ❤️','С тобой даже обычный день — приключение.','Ты сильнее, чем думаешь.','Пусть мечты становятся планами, а планы — победами.','Обожаю твою улыбку.','Ты мой дом, где бы мы ни были.','Пусть удача скачет рядом, как верный конь.','Я верю в тебя, даже когда ты сам сомневаешься.','С тобой мне спокойно и весело одновременно.','Ты умеешь сделать мой день лучше одним объятием.','Ты мой любимый напарник по всем жизненным квестам.','Пусть в жизни будет больше побед и меньше багов.','Марсель одобряет тебя. В основном. 🐈','Спасибо, что выбираешь меня каждый день.','И самое главное: я люблю тебя, Вадик! 💋'];
+const wishes=['Ты мой любимый человек ❤️','С тобой даже обычный день — приключение.','Ты у меня самый сильный присильный','Все твои мечты сбудутся, я помогу','Обожаю твой член.','Ты мой дом, где бы мы ни были.','Ну какой красивый мужчинка','Я верю в тебя, даже когда ты сам сомневаешься.','С тобой мне спокойно и весело одновременно.','Ты умеешь сделать мой день лучше.','Ты мой любимый напарник по всем жизненным квестам.','Действуй, будь уверенным, совершай немыслимое и невероятное.','Ты лучший папа для Марселя','Спасибо, что выбираешь меня каждый день.','Люблю тебя больше жизни 💋'];
 let popped=0;const area=document.getElementById('balloonsArea');
 wishes.forEach((wish,i)=>{let b=document.createElement('button');b.className='balloon';b.setAttribute('aria-label','Лопнуть шарик '+(i+1));b.textContent='✦';b.onclick=()=>{if(b.classList.contains('popped'))return;b.classList.add('popped','revealed');b.textContent=wish;b.setAttribute('aria-label','Послание: '+wish);popped++;document.getElementById('balloonStatus').textContent='Открыто '+popped+' из '+wishes.length+' посланий';if(popped===wishes.length)document.getElementById('next5').classList.remove('hidden')};area.appendChild(b)});
 
 const diagnoses=[
- ['Голова','Сошла с ума по Вадику','Постоянно думает о тебе и улыбается без причины. Прогноз: пожизненно. ❤️'],
+ ['Голова','Сошла с ума по Вадику','Прогноз: пожизненно. Лекарство: не изобретено ❤️'],
  ['Глаза','Видят только тебя','Даже среди толпы первым замечает своего любимого ведьмака.'],
- ['Улыбка','Приступы счастья','Возникают внезапно, особенно когда Вадик рядом или пишет сообщение.'],
- ['Шея','Острая нехватка объятий','Для облегчения симптомов назначены долгие объятия от Вадика.'],
- ['Сердце','Хроническая любовь','Состояние стабильное, лечение не требуется. Объект любви — Вадик.'],
- ['Руки','Синдром обнимашек','Руки сами тянутся обнять любимого человека. Побочный эффект приятный.'],
- ['Ноги','Не хочет уходить без тебя','Предпочитает идти по приключениям вместе с Вадиком.'],
- ['Марсель','Котозависимость','Марсель — пушистый соучастник всех домашних приключений. Без него никак. 🐈']
+ ['Улыбка','Приступы счастья','Причина болезни: шутки и присутствие Вадика'],
+ ['Шея','Острая нехватка поцелуев','Для облегчения симптомов назначены долгие лобызания с Вадиком.'],
+ ['Грудь','Суховатость','Состояние нестабильное, требуется лечение методом увлажнения. Объект влажности — Вадик.'],
+ ['Руки','Синдром слабости','Требуются ежедневные обнимашки.Побочный эффект приятный.'],
+ ['Ноги','Не хотят сдвигаться','Лечение не требуется, заболевание приносит только плюсы обоим'],
+ ['Типа Марсель','Котозависимость','Соучастник всех домашних приключений. Без него никак. 🐈']
 ];
 const foundDiagnoses=new Set();
 function revealDiagnosis(i){
