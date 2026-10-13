@@ -66,7 +66,7 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
   <p>На камне вырезаны слова: «Не клинок меняет исход битвы, а то, что ты замечаешь до неё. Я дрожу рядом с чудовищем, но не от страха. Что я?»</p>
   <p class="note">Подсказка: вещь, которую ведьмак носит на груди.</p>
   <div class="row"><button class="choice" onclick="answer(2,'медальон')">Медальон</button><button class="choice" onclick="answer(2,'монета')">Монета</button><button class="choice" onclick="answer(2,'ключ')">Ключ</button></div>
-  <div class="status" id="s2"></div><button class="btn hidden" id="next2" onclick="go(sorting)">Перейти к следующему испытанию →</button>
+  <div class="status" id="s2"></div><button class="btn hidden" id="next2" onclick="go('sorting')">Перейти к следующему испытанию →</button>
  </div>
 </section>
 
@@ -93,13 +93,13 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
    <div class="drop" data-drop="arthur"><h3>Артур Морган</h3><div class="dropcontent"></div></div>
    <div class="drop" data-drop="rita"><h3>Рита (комплект для выживания)</h3><div class="dropcontent"></div></div>
   </div>
-  <div class="status" id="sortStatus"></div><button class="btn" onclick="checkSort()">Проверить расклад</button><button class="btn hidden" id="next4" onclick="go(kaermorhen)">Вперёд →</button>
+  <div class="status" id="sortStatus"></div><button class="btn" onclick="checkSort()">Проверить расклад</button><button class="btn hidden" id="next4" onclick="go('kaermorhen')">Вперёд →</button>
  </div>
 </section>
 
-<section class="screen witcher" id="kaermorhen"><div class="panel"><div class="kicker">Испытание IV · Переворот в крепости</div><h2>Кто правит Каэр Морхеном?</h2><div class="riddle-img">🏰 🤴 👑</div><p>В крепости ведьмаков произошёл переворот. Новый хозяин не носит меч, не охотится на чудовищ и не платит за еду. Он требует поглаживаний, бесконечной еды и будит всех среди ночи.</p><p><b>Кто теперь главный в крепости?</b></p><div class="row"><button class="choice" onclick="questAnswer('kaermorhen',false,'Геральт пока может оставить меч у двери.')">А) Геральт из Ривии</button><button class="choice" onclick="questAnswer('kaermorhen',false,'Вадик, ты, конечно, ведьмак… Но не главный.. ')">Б) Вадик, ведьмак 27-го уровня</button><button class="choice" onclick="questAnswer('kaermorhen',true,'Верно! Марсель, наш Повелитель и Разрушитель Ночного Сна. 🐈')">В) Марсель, опытный хозяин дома</button></div><div class="status" id="status-kaermorhen"></div><button class="btn hidden" id="next-kaermorhen" onclick="go(choice)">Принять следующий контракт →</button></div></section>
+<section class="screen witcher" id="kaermorhen"><div class="panel"><div class="kicker">Испытание IV · Переворот в крепости</div><h2>Кто правит Каэр Морхеном?</h2><div class="riddle-img">🏰 🤴 👑</div><p>В крепости ведьмаков произошёл переворот. Новый хозяин не носит меч, не охотится на чудовищ и не платит за еду. Он требует поглаживаний, бесконечной еды и будит всех среди ночи.</p><p><b>Кто теперь главный в крепости?</b></p><div class="row"><button class="choice" onclick="questAnswer('kaermorhen',false,'Геральт пока может оставить меч у двери.')">А) Геральт из Ривии</button><button class="choice" onclick="questAnswer('kaermorhen',false,'Вадик, ты, конечно, ведьмак… Но не главный.. ')">Б) Вадик, ведьмак 27-го уровня</button><button class="choice" onclick="questAnswer('kaermorhen',true,'Верно! Марсель, наш Повелитель и Разрушитель Ночного Сна. 🐈')">В) Марсель, опытный хозяин дома</button></div><div class="status" id="status-kaermorhen"></div><button class="btn hidden" id="next-kaermorhen" onclick="go('choice')">Принять следующий контракт →</button></div></section>
 
-<section class="screen western" id="choice"><div class="panel"><div class="kicker">Испытание V · Судьба королевства</div><h2>Самый сложный выбор ведьмака</h2><div class="riddle-img">🐺 ⚔️ ❤️</div><p>Перед тобой три задания: спасти королевство, победить древнее зло или провести вечер с Ритой. Все задания отмечены как срочные.</p><p><b>Какой квест ты выберешь?</b></p><div class="row"><button class="choice" onclick="questAnswer('choice',false,'Спишь на диване...')">А) Спасти королевство</button><button class="choice" onclick="questAnswer('choice',false,'Развод!!!')">Б) Победить древнее зло</button><button class="choice" onclick="questAnswer('choice',true,'Именно! Королевство как-нибудь справится. А Импровизация истории еще не досмотрена ❤️')">В) Пойти к Рите</button></div><div class="status" id="status-choice"></div><button class="btn hidden" id="next-choice" onclick="go(diagnoses)">К следующему испытанию →</button></div></section>
+<section class="screen western" id="choice"><div class="panel"><div class="kicker">Испытание V · Судьба королевства</div><h2>Самый сложный выбор ведьмака</h2><div class="riddle-img">🐺 ⚔️ ❤️</div><p>Перед тобой три задания: спасти королевство, победить древнее зло или провести вечер с Ритой. Все задания отмечены как срочные.</p><p><b>Какой квест ты выберешь?</b></p><div class="row"><button class="choice" onclick="questAnswer('choice',false,'Спишь на диване...')">А) Спасти королевство</button><button class="choice" onclick="questAnswer('choice',false,'Развод!!!')">Б) Победить древнее зло</button><button class="choice" onclick="questAnswer('choice',true,'Именно! Королевство как-нибудь справится. А Импровизация истории еще не досмотрена ❤️')">В) Пойти к Рите</button></div><div class="status" id="status-choice"></div><button class="btn hidden" id="next-choice" onclick="go('diagnoses')">К следующему испытанию →</button></div></section>
 
 <section class="screen western" id="diagnoses"><div class="panel">
  <div class="kicker">Испытание VI · Секретный пациент</div><h2>Найти все болезни у девушки</h2>
@@ -117,12 +117,12 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
  </div>
  <div class="diagnosis-log"><h3>Медицинский журнал ведьмака</h3><p id="diagnosisHint" class="note">Найдено диагнозов: 0 из 8. Ищи скрытые области и нажимай на разные части изображения. Диагнозы открываются только по клику.</p><div id="diagnosisResults"></div>
  <div id="diagnosisComplete" class="status"></div></div>
- <button class="btn hidden" id="next-diagnoses" onclick="go(challenge)">Все диагнозы найдены · К следующей миссии →</button>
+ <button class="btn hidden" id="next-diagnoses" onclick="go('challenge')">Все диагнозы найдены · К следующей миссии →</button>
  </div></section>
 
-<section class="screen witcher" id="challenge"><div class="panel"><div class="kicker">Испытание VII · Испытание ведьмака</div><h2>Что тяжелее для ведьмака?</h2><div class="riddle-img">🐺 🧹 💀</div><p>Ты прошёл болота, победил чудовищ и пережил самые опасные приключения. Но теперь перед тобой испытание, о котором не пишут в ведьмачьих книгах.</p><p><b>Что окажется самым тяжёлым испытанием?</b></p><div class="row"><button class="choice" onclick="questAnswer('challenge',false,'Монстр повержен! Это было слишкооом легко..')">А) Победить чудовище по имени Жопоклюй</button><button class="choice" onclick="questAnswer('challenge',false,'Не ври. Ты запрыгиваешь с первого раза')">Б) Запрыгнуть на лошади в поезд</button><button class="choice" onclick="questAnswer('challenge',true,'ЛЕГЕНДАРНАЯ СЛОЖНОСТЬ! Ведьмак обнаружил, что чудовища оставляют меньше следов, чем Рита. ')">В) Убрать весь срач после Риты по всей квартире</button></div><div class="status" id="status-challenge"></div><button class="btn hidden" id="next-challenge" onclick="go(gerald)">Продолжить испытание →</button></div></section>
+<section class="screen witcher" id="challenge"><div class="panel"><div class="kicker">Испытание VII · Испытание ведьмака</div><h2>Что тяжелее для ведьмака?</h2><div class="riddle-img">🐺 🧹 💀</div><p>Ты прошёл болота, победил чудовищ и пережил самые опасные приключения. Но теперь перед тобой испытание, о котором не пишут в ведьмачьих книгах.</p><p><b>Что окажется самым тяжёлым испытанием?</b></p><div class="row"><button class="choice" onclick="questAnswer('challenge',false,'Монстр повержен! Это было слишкооом легко..')">А) Победить чудовище по имени Жопоклюй</button><button class="choice" onclick="questAnswer('challenge',false,'Не ври. Ты запрыгиваешь с первого раза')">Б) Запрыгнуть на лошади в поезд</button><button class="choice" onclick="questAnswer('challenge',true,'ЛЕГЕНДАРНАЯ СЛОЖНОСТЬ! Ведьмак обнаружил, что чудовища оставляют меньше следов, чем Рита. ')">В) Убрать весь срач после Риты по всей квартире</button></div><div class="status" id="status-challenge"></div><button class="btn hidden" id="next-challenge" onclick="go('gerald')">Продолжить испытание →</button></div></section>
 
-<section class="screen western" id="gerald"><div class="panel"><div class="kicker">Испытание VIII · Бытовой босс</div><h2>Тяжёлая судьба Геральда</h2><div class="riddle-img">🧺 🐺 🛋️</div><p> Ты вернулся домой после контракта. На полу следы приключений, на диване — вещи, а Марсель устроился посреди прохода и не собирается тебя пропускать.</p><p><b>Как поступит опытный охотник на чудовищ?</b></p><div class="row"><button class="choice" onclick="questAnswer('gerald',false,'Марсель просто отвернулся')">А) Достанет серебряный меч</button><button class="choice" onclick="questAnswer('gerald',false,'Марсель не ушел, а только громко заурчал')">Б) Попросит Марселя освободить проход</button><button class="choice" onclick="questAnswer('gerald',true,'Верно! А еще он накакал, поторопись. 🐈')">В) Начнет гладить, пока кот сам не решит уйти с пути</button></div><div class="status" id="status-gerald"></div><button class="btn hidden" id="next-gerald" onclick="go(balloons)">Следующее задание →</button></div></section>
+<section class="screen western" id="gerald"><div class="panel"><div class="kicker">Испытание VIII · Бытовой босс</div><h2>Тяжёлая судьба Геральда</h2><div class="riddle-img">🧺 🐺 🛋️</div><p> Ты вернулся домой после контракта. На полу следы приключений, на диване — вещи, а Марсель устроился посреди прохода и не собирается тебя пропускать.</p><p><b>Как поступит опытный охотник на чудовищ?</b></p><div class="row"><button class="choice" onclick="questAnswer('gerald',false,'Марсель просто отвернулся')">А) Достанет серебряный меч</button><button class="choice" onclick="questAnswer('gerald',false,'Марсель не ушел, а только громко заурчал')">Б) Попросит Марселя освободить проход</button><button class="choice" onclick="questAnswer('gerald',true,'Верно! А еще он накакал, поторопись. 🐈')">В) Начнет гладить, пока кот сам не решит уйти с пути</button></div><div class="status" id="status-gerald"></div><button class="btn hidden" id="next-gerald" onclick="go('balloons')">Следующее задание →</button></div></section>
 
 <section class="screen western" id="balloons">
  <div class="panel">
@@ -130,7 +130,7 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
   <p>Нажимай на шарики — узнай, что о тебе думают.</p>
   <div class="balloons" id="balloonsArea"></div>
   <div class="status" id="balloonStatus">Открыто 0 из 15 посланий</div>
-  <button class="btn hidden" id="next5" onclick="go(contract)">Следующий контракт →</button>
+  <button class="btn hidden" id="next5" onclick="go('contract')">Следующий контракт →</button>
  </div>
 </section>
  <section class="screen western" id="contract">
@@ -141,7 +141,7 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
   <p><b>С кем у тебя заключён контракт пожизненно?</b></p>
   <input class="answer" id="ritaAnswer" placeholder="Введи имя..." autocomplete="off">
   <button class="btn" onclick="checkRita()">Подписать контракт ❤️</button>
-  <div class="status" id="s3"></div><button class="btn hidden" id="next3" onclick="go(final)">Контракт принят →</button>
+  <div class="status" id="s3"></div><button class="btn hidden" id="next3" onclick="go('final')">Контракт принят →</button>
  </div>
 </section>
 
