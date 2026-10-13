@@ -135,18 +135,7 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
 </section>
 
 <section class="screen western" id="contract">
- <div class="panel">
-  <div class="kicker">Испытание X · Контракт пожизненный</div><h2>Самая важная награда</h2>
-  <div class="riddle-img">💌 🔒 ❤️</div>
-  <p>Перед тобой последний контракт. Ни сроков, ни платы, ни возможности отказаться. Он заключён ни с королём, ни с бандой. С тем человеком, который выбрал тебя сердцем и собирается быть рядом и в шторм, и в тишине.</p>
-  <p><b>С кем у тебя заключён контракт пожизненно?</b></p>
-  <input class="answer" id="ritaAnswer" placeholder="Введи имя..." autocomplete="off">
-  <button class="btn" onclick="checkRita()">Подписать контракт ❤️</button>
-  <div class="status" id="s3"></div><button class="btn hidden" id="next3" onclick="go(homecoming)">Контракт принят →</button>
- </div>
-</section>
-
-<section class="screen witcher" id="homecoming"><div class="panel"><div class="kicker">Испытание XI · Контракт судьбы</div><h2>Вернуться домой</h2><div class="riddle-img">🏡 ❤️ 🐈</div><p>Вадик прошёл десятки опасных заданий. Побеждал чудовищ, переживал перестрелки и не раз спасал мир. Но теперь перед ним последнее задание.</p><p>«Рита ждёт дома. Марсель уже занял твоё место. Ужин может остыть. Судьба мира подождёт».</p><p><b>Что выберет настоящий герой?</b></p><div class="row"><button class="choice" onclick="questAnswer('homecoming',false,'На доске объявлений новых заданий нет. Зато дома ждут!')">А) Взять ещё один контракт</button><button class="choice" onclick="questAnswer('homecoming',false,'Доска объявлений пуста. Пора домой, ведьмак.')">Б) Проверить доску объявлений</button><button class="choice" onclick="questAnswer('homecoming',true,'ЗАДАНИЕ ВЫПОЛНЕНО ❤️ Ты победил, ведьмак. Лучший финал — быть рядом с теми, кого любишь. Награда: объятия Риты, мурчание Марселя и поздравление с 27-летием!')">В) Вернуться к Рите и Марселю</button></div><div class="status" id="status-homecoming"></div><button class="btn hidden" id="next-homecoming" onclick="go(final)">Получить главную награду ❤️</button></div></section>
+<div class="kicker">Испытание X · Контракт судьбы</div><h2>Вернуться домой</h2><div class="riddle-img">🏡 ❤️ 🐈</div><p>Вадик прошёл десятки опасных заданий. Побеждал чудовищ, переживал перестрелки и не раз спасал мир. Но теперь перед ним последнее задание.</p><p>«Рита ждёт дома. Марсель уже занял твоё место. Ужин может остыть. Судьба мира подождёт».</p><p><b>Что выберет настоящий герой?</b></p><div class="row"><button class="choice" onclick="questAnswer('homecoming',false,'На доске объявлений новых заданий нет. Зато дома ждут!')">А) Взять ещё один контракт</button><button class="choice" onclick="questAnswer('homecoming',false,'Доска объявлений пуста. Пора домой, ведьмак.')">Б) Проверить доску объявлений</button><button class="choice" onclick="questAnswer('homecoming',true,'ЗАДАНИЕ ВЫПОЛНЕНО ❤️ Ты победил, ведьмак. Лучший финал — быть рядом с теми, кого любишь. Награда: объятия Риты, мурчание Марселя и поздравление с 27-летием!')">В) Вернуться к Рите и Марселю</button></div><div class="status" id="status-homecoming"></div><button class="btn hidden" id="next-homecoming" onclick="go(final)">Получить главную награду ❤️</button></div></section>
 
 <section class="screen witcher" id="final">
  <div class="panel">
