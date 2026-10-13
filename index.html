@@ -42,10 +42,10 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
   <h1>Вадик <span class="gold">XXVII</span></h1>
   <h2>Контракт судьбы</h2>
   <p>Ведьмачьи тропы привели тебя на Дикий Запад. Сегодня тебе исполнилось <b>27 лет</b>, и на твоё имя записан контракт, который не взять ни серебряным мечом, ни револьвером.</p>
-  <p>Чтобы получить награду, пройди испытания. Думай как ведьмак, замечай детали как следопыт и помни: некоторые вещи ценнее золота.</p>
+  <p>Чтобы получить награду, пройди испытания. Думай как ведьмак, замечай детали как опытный член банды Датча ван дер Линде. И помни: некоторые вещи ценнее золота.</p>
   <button class="btn" onclick="startQuest()">Взять контракт →</button>
   <button class="btn secondary" onclick="toggleMusic()" id="musicBtn">♫ Включить музыку</button>
-  <p class="note">Совет: лучше проходить на компьютере со звуком. Музыка запускается по нажатию — так работают браузеры.</p>
+  <p class="note">Совет: ВКЛЮЧИ МУЗЫКУ. Музыка запускается по нажатию.</p>
  </div>
 </section>
 
@@ -66,65 +66,68 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
   <p>На камне вырезаны слова: «Не клинок меняет исход битвы, а то, что ты замечаешь до неё. Я дрожу рядом с чудовищем, но не от страха. Что я?»</p>
   <p class="note">Подсказка: вещь, которую ведьмак носит на груди.</p>
   <div class="row"><button class="choice" onclick="answer(2,'медальон')">Медальон</button><button class="choice" onclick="answer(2,'монета')">Монета</button><button class="choice" onclick="answer(2,'ключ')">Ключ</button></div>
-  <div class="status" id="s2"></div><button class="btn hidden" id="next2" onclick="go(sorting)">Открыть тайный контракт →</button>
+  <div class="status" id="s2"></div><button class="btn hidden" id="next2" onclick="go(sorting)">Перейти к следующему испытанию →</button>
  </div>
 </section>
 
 <section class="screen witcher" id="sorting">
  <div class="panel">
   <div class="kicker">Испытание III · Раздел добычи</div><h2>Кому что принадлежит?</h2>
-  <p>Перетащи предметы в правильные лагеря. На телефоне можно нажимать на предмет, а затем на нужный лагерь.</p>
+  <p>Перетащи предметы в правильные лагеря.</p>
   <div class="items" id="items">
    <div class="item" draggable="true" data-owner="witcher">Серебряный меч ⚔️</div>
+   <div class="item" draggable="true" data-owner="witcher">Плотва 🐴</div>
    <div class="item" draggable="true" data-owner="arthur">Револьвер 🔫</div>
    <div class="item" draggable="true" data-owner="rita">Фломастеры 🖍️</div>
    <div class="item" draggable="true" data-owner="rita">Кот 🐈</div>
    <div class="item" draggable="true" data-owner="rita">Энергетик ⚡</div>
+   <div class="item" draggable="true" data-owner="arthur">Лассо 🪢</div>
    <div class="item" draggable="true" data-owner="rita">Подушка 🛏️</div>
    <div class="item" draggable="true" data-owner="witcher">Ведьмачий медальон 🐺</div>
    <div class="item" draggable="true" data-owner="arthur">Ковбойская шляпа 🤠</div>
-   <div class="item" draggable="true" data-owner="arthur">Седло 🐎</div>
+   <div class="item" draggable="true" data-owner="arthur">Бодицея 🐎</div>
+   <div class="item" draggable="true" data-owner="witcher">Игральная карта Гвинта 🃏</div>
   </div>
   <div class="draggrid">
    <div class="drop" data-drop="witcher"><h3>Геральт / Ведьмак</h3><div class="dropcontent"></div></div>
    <div class="drop" data-drop="arthur"><h3>Артур Морган</h3><div class="dropcontent"></div></div>
-   <div class="drop" data-drop="rita"><h3>Рита — хозяйка уюта 💋</h3><div class="dropcontent"></div></div>
+   <div class="drop" data-drop="rita"><h3>Рита (комплект для выживания)</h3><div class="dropcontent"></div></div>
   </div>
-  <div class="status" id="sortStatus"></div><button class="btn" onclick="checkSort()">Проверить расклад</button><button class="btn hidden" id="next4" onclick="go(kaermorhen)">Вперёд, к награде →</button>
+  <div class="status" id="sortStatus"></div><button class="btn" onclick="checkSort()">Проверить расклад</button><button class="btn hidden" id="next4" onclick="go(kaermorhen)">Вперёд →</button>
  </div>
 </section>
 
-<section class="screen witcher" id="kaermorhen"><div class="panel"><div class="kicker">Испытание IV · Переворот в крепости</div><h2>Кто правит Каэр Морхеном?</h2><div class="riddle-img">🏰 🐈 👑</div><p>В крепости ведьмаков произошёл переворот. Новый хозяин не носит меч, не охотится на чудовищ и не платит за еду. Он требует ужин по расписанию, занимает кровать и будит всех среди ночи.</p><p><b>Кто теперь главный в крепости?</b></p><div class="row"><button class="choice" onclick="questAnswer('kaermorhen',false,'Геральт пока может оставить меч у двери.')">А) Геральт из Ривии</button><button class="choice" onclick="questAnswer('kaermorhen',false,'Вадик, ты, конечно, ведьмак 27-го уровня…')">Б) Вадик, ведьмак 27-го уровня</button><button class="choice" onclick="questAnswer('kaermorhen',true,'Верно! Марсель, Повелитель Мисок и Разрушитель Ночного Сна, правит безраздельно. 😹')">В) Марсель, Повелитель Мисок</button></div><div class="status" id="status-kaermorhen"></div><button class="btn hidden" id="next-kaermorhen" onclick="go(choice)">Принять следующий контракт →</button></div></section>
+<section class="screen witcher" id="kaermorhen"><div class="panel"><div class="kicker">Испытание IV · Переворот в крепости</div><h2>Кто правит Каэр Морхеном?</h2><div class="riddle-img">🏰 🤴 👑</div><p>В крепости ведьмаков произошёл переворот. Новый хозяин не носит меч, не охотится на чудовищ и не платит за еду. Он требует поглаживаний, бесконечной еды и будит всех среди ночи.</p><p><b>Кто теперь главный в крепости?</b></p><div class="row"><button class="choice" onclick="questAnswer('kaermorhen',false,'Геральт пока может оставить меч у двери.')">А) Геральт из Ривии</button><button class="choice" onclick="questAnswer('kaermorhen',false,'Вадик, ты, конечно, ведьмак… Но не главный.. ')">Б) Вадик, ведьмак 27-го уровня</button><button class="choice" onclick="questAnswer('kaermorhen',true,'Верно! Марсель, наш Повелитель и Разрушитель Ночного Сна. 🐈')">В) Марсель, опытный хозяин дома</button></div><div class="status" id="status-kaermorhen"></div><button class="btn hidden" id="next-kaermorhen" onclick="go(choice)">Принять следующий контракт →</button></div></section>
 
-<section class="screen western" id="choice"><div class="panel"><div class="kicker">Испытание V · Судьба королевства</div><h2>Самый сложный выбор ведьмака</h2><div class="riddle-img">🐺 ⚔️ ❤️</div><p>Перед Вадиком три задания: спасти королевство, победить древнее зло или провести вечер с Ритой. Все задания отмечены как срочные.</p><p><b>Какой квест он выберет?</b></p><div class="row"><button class="choice" onclick="questAnswer('choice',false,'Королевство подождёт… но ведьмак всё ещё раздумывает.')">А) Спасти королевство</button><button class="choice" onclick="questAnswer('choice',false,'Древнее зло никуда не денется. А вечер уже начинается!')">Б) Победить древнее зло</button><button class="choice" onclick="questAnswer('choice',true,'Именно! Королевство как-нибудь справится. +100 к отношениям и +50 к уюту. ❤️')">В) Пойти к Рите</button></div><div class="status" id="status-choice"></div><button class="btn hidden" id="next-choice" onclick="go(diagnoses)">К следующему испытанию →</button></div></section>
+<section class="screen western" id="choice"><div class="panel"><div class="kicker">Испытание V · Судьба королевства</div><h2>Самый сложный выбор ведьмака</h2><div class="riddle-img">🐺 ⚔️ ❤️</div><p>Перед тобой три задания: спасти королевство, победить древнее зло или провести вечер с Ритой. Все задания отмечены как срочные.</p><p><b>Какой квест ты выберешь?</b></p><div class="row"><button class="choice" onclick="questAnswer('choice',false,'Спишь на диване...')">А) Спасти королевство</button><button class="choice" onclick="questAnswer('choice',false,'Развод!!!')">Б) Победить древнее зло</button><button class="choice" onclick="questAnswer('choice',true,'Именно! Королевство как-нибудь справится. А Импровизация истории еще не досмотрена ❤️')">В) Пойти к Рите</button></div><div class="status" id="status-choice"></div><button class="btn hidden" id="next-choice" onclick="go(diagnoses)">К следующему испытанию →</button></div></section>
 
 <section class="screen western" id="diagnoses"><div class="panel">
  <div class="kicker">Испытание VI · Секретный пациент</div><h2>Найти все болезни у девушки</h2>
- <p>Вадик, даже ведьмаку иногда приходится расследовать необычные случаи. Перед тобой Рита — пациентка с набором исключительно романтических недугов. Найди едва заметные светящиеся области на иллюстрации и нажимай на них, чтобы обнаружить все диагнозы. Метки специально почти незаметны — внимательно осмотри изображение!</p>
+ <p>Вадик, ты у меня самый лучший доктор во всем мире. Поэтому я не сомневаюсь, что ты найдешь все мои болезни. Нажимай на части тела, чтобы обнаружить все диагнозы.</p>
  <div class="diagnosis-wrap" id="diagnosisWrap">
   <img class="diagnosis-art" src="assets/diagnosis-rita.png" alt="Иллюстрация Риты в фэнтезийной комнате рядом с котом Марселем">
   <button class="hotspot" style="left:51%;top:17%" aria-label="Голова" onclick="revealDiagnosis(0)"></button>
   <button class="hotspot" style="left:53%;top:25%" aria-label="Глаза" onclick="revealDiagnosis(1)"></button>
   <button class="hotspot" style="left:50%;top:30%" aria-label="Улыбка" onclick="revealDiagnosis(2)"></button>
   <button class="hotspot" style="left:58%;top:43%" aria-label="Шея" onclick="revealDiagnosis(3)"></button>
-  <button class="hotspot" style="left:52%;top:51%" aria-label="Сердце" onclick="revealDiagnosis(4)"></button>
+  <button class="hotspot" style="left:52%;top:51%" aria-label="Грудь" onclick="revealDiagnosis(4)"></button>
   <button class="hotspot" style="left:23%;top:60%" aria-label="Руки" onclick="revealDiagnosis(5)"></button>
   <button class="hotspot" style="left:35%;top:86%" aria-label="Ноги" onclick="revealDiagnosis(6)"></button>
-  <button class="hotspot" style="left:78%;top:78%" aria-label="Марсель" onclick="revealDiagnosis(7)"></button>
+  <button class="hotspot" style="left:78%;top:78%" aria-label="Кот" onclick="revealDiagnosis(7)"></button>
  </div>
  <div class="diagnosis-log"><h3>Медицинский журнал ведьмака</h3><p id="diagnosisHint" class="note">Найдено диагнозов: 0 из 8. Ищи скрытые области и нажимай на разные части изображения. Диагнозы открываются только по клику.</p><div id="diagnosisResults"></div>
  <div id="diagnosisComplete" class="status"></div></div>
- <button class="btn hidden" id="next-diagnoses" onclick="go(challenge)">Все диагнозы найдены · К финальной миссии →</button>
+ <button class="btn hidden" id="next-diagnoses" onclick="go(challenge)">Все диагнозы найдены · К следующей миссии →</button>
  </div></section>
 
-<section class="screen witcher" id="challenge"><div class="panel"><div class="kicker">Испытание VII · Испытание ведьмака</div><h2>Что тяжелее для ведьмака?</h2><div class="riddle-img">🐺 🧹 💀</div><p>Вадик прошёл болота, победил чудовищ и пережил самые опасные приключения. Но теперь перед ним испытание, о котором не пишут в ведьмачьих книгах.</p><p><b>Что окажется самым тяжёлым испытанием?</b></p><div class="row"><button class="choice" onclick="questAnswer('challenge',false,'Монстр повержен! Но впереди ещё два испытания…')">А) Победить чудовище по имени Жопоклюй</button><button class="choice" onclick="questAnswer('challenge',false,'Даже Плотва удивилась такому трюку. Попробуй ещё раз!')">Б) Запрыгнуть на лошади в поезд</button><button class="choice" onclick="questAnswer('challenge',true,'ЛЕГЕНДАРНАЯ СЛОЖНОСТЬ! 😂 Ведьмак обнаружил, что чудовища оставляют меньше следов, чем Рита. +50 к терпению!')">В) Убрать весь срач после Риты по всей квартире</button></div><div class="status" id="status-challenge"></div><button class="btn hidden" id="next-challenge" onclick="go(gerald)">Продолжить испытание →</button></div></section>
+<section class="screen witcher" id="challenge"><div class="panel"><div class="kicker">Испытание VII · Испытание ведьмака</div><h2>Что тяжелее для ведьмака?</h2><div class="riddle-img">🐺 🧹 💀</div><p>Ты прошёл болота, победил чудовищ и пережил самые опасные приключения. Но теперь перед тобой испытание, о котором не пишут в ведьмачьих книгах.</p><p><b>Что окажется самым тяжёлым испытанием?</b></p><div class="row"><button class="choice" onclick="questAnswer('challenge',false,'Монстр повержен! Это было слишкооом легко..')">А) Победить чудовище по имени Жопоклюй</button><button class="choice" onclick="questAnswer('challenge',false,'Не ври. Ты запрыгиваешь с первого раза')">Б) Запрыгнуть на лошади в поезд</button><button class="choice" onclick="questAnswer('challenge',true,'ЛЕГЕНДАРНАЯ СЛОЖНОСТЬ! Ведьмак обнаружил, что чудовища оставляют меньше следов, чем Рита. ')">В) Убрать весь срач после Риты по всей квартире</button></div><div class="status" id="status-challenge"></div><button class="btn hidden" id="next-challenge" onclick="go(gerald)">Продолжить испытание →</button></div></section>
 
-<section class="screen western" id="gerald"><div class="panel"><div class="kicker">Испытание VIII · Бытовой босс</div><h2>Тяжёлая судьба Геральда</h2><div class="riddle-img">🧺 🐺 🛋️</div><p>Геральт вернулся домой после контракта. На полу следы приключений, на диване — вещи, а Марсель устроился посреди прохода и смотрит так, будто это ведьмак пришёл в гости.</p><p><b>Как поступит опытный охотник на чудовищ?</b></p><div class="row"><button class="choice" onclick="questAnswer('gerald',false,'Мечом тут не помочь. Попробуй другой вариант.')">А) Достанет серебряный меч</button><button class="choice" onclick="questAnswer('gerald',false,'Марсель не двигается. Он тут главный.')">Б) Попросит Марселя освободить проход</button><button class="choice" onclick="questAnswer('gerald',true,'Верно! Примет реальность, наведёт уют вместе с Ритой и выдаст Марселю премию вкусняшками. 🐈')">В) Смирится: это теперь их общее логово</button></div><div class="status" id="status-gerald"></div><button class="btn hidden" id="next-gerald" onclick="go(balloons)">Секретное задание →</button></div></section>
+<section class="screen western" id="gerald"><div class="panel"><div class="kicker">Испытание VIII · Бытовой босс</div><h2>Тяжёлая судьба Геральда</h2><div class="riddle-img">🧺 🐺 🛋️</div><p> Ты вернулся домой после контракта. На полу следы приключений, на диване — вещи, а Марсель устроился посреди прохода и не собирается тебя пропускать.</p><p><b>Как поступит опытный охотник на чудовищ?</b></p><div class="row"><button class="choice" onclick="questAnswer('gerald',false,'Марсель просто отвернулся')">А) Достанет серебряный меч</button><button class="choice" onclick="questAnswer('gerald',false,'Марсель не ушел, а только громко заурчал')">Б) Попросит Марселя освободить проход</button><button class="choice" onclick="questAnswer('gerald',true,'Верно! А еще он накакал, поторопись. 🐈')">В) Начнет гладить, пока кот сам не решит уйти с пути</button></div><div class="status" id="status-gerald"></div><button class="btn hidden" id="next-gerald" onclick="go(balloons)">Следующее задание →</button></div></section>
 
 <section class="screen western" id="balloons">
  <div class="panel">
   <div class="kicker">Испытание IX · Воздушная удача</div><h2>Лопни все сомнения</h2>
-  <p>Каждый шарик хранит пожелание или комплимент от Риты. Нажимай на шарики — собери все послания.</p>
+  <p>Нажимай на шарики — узнай, что о тебе думают.</p>
   <div class="balloons" id="balloonsArea"></div>
   <div class="status" id="balloonStatus">Открыто 0 из 15 посланий</div>
   <button class="btn hidden" id="next5" onclick="go(contract)">Следующий контракт →</button>
@@ -135,7 +138,7 @@ p{max-width:68ch}.gold{color:var(--gold)}.btn{background:var(--gold);color:#2116
  <div class="panel">
   <div class="kicker">Испытание X · Контракт пожизненный</div><h2>Самая важная награда</h2>
   <div class="riddle-img">💌 🔒 ❤️</div>
-  <p>Перед тобой последний контракт. Ни сроков, ни платы, ни возможности отказаться. Он заключён не с королём и не с бандой. С тем человеком, который выбрал тебя сердцем и собирается быть рядом и в шторм, и в тишине.</p>
+  <p>Перед тобой последний контракт. Ни сроков, ни платы, ни возможности отказаться. Он заключён ни с королём, ни с бандой. С тем человеком, который выбрал тебя сердцем и собирается быть рядом и в шторм, и в тишине.</p>
   <p><b>С кем у тебя заключён контракт пожизненно?</b></p>
   <input class="answer" id="ritaAnswer" placeholder="Введи имя..." autocomplete="off">
   <button class="btn" onclick="checkRita()">Подписать контракт ❤️</button>
@@ -165,12 +168,12 @@ function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});
 function startQuest(){go('riddle1')}
 function questAnswer(id,correct,message){document.getElementById('status-'+id).textContent=message;if(correct)document.getElementById('next-'+id).classList.remove('hidden')}
 const done={};
-function answer(n,a){const ok=(n===1&&a==='компас')||(n===2&&a==='медальон');document.getElementById('s'+n).textContent=ok?'Верно. Следопытский инстинкт тебя не подвёл.':'Не то. Осмотрись внимательнее и попробуй ещё.';if(ok){done[n]=true;document.getElementById('next'+n).classList.remove('hidden')}}
+function answer(n,a){const ok=(n===1&&a==='компас')||(n===2&&a==='медальон');document.getElementById('s'+n).textContent=ok?'Верно. Какооой умныый муж у меня':'Да уж.. Думать не хотим';if(ok){done[n]=true;document.getElementById('next'+n).classList.remove('hidden')}}
 function checkRita(){let v=document.getElementById('ritaAnswer').value.trim().toLowerCase().replaceAll('ё','е');if(v==='рита'){document.getElementById('s3').textContent='Контракт принят. Рита — не награда за квест, а любовь, с которой хочется пройти всю жизнь. ❤️';document.getElementById('next3').classList.remove('hidden')}else document.getElementById('s3').textContent='Имя спрятано в самом сердце. Попробуй ещё раз.'}
 let held=null, selected=null;
 document.querySelectorAll('.item').forEach(el=>{el.addEventListener('dragstart',e=>{held=el;e.dataTransfer.setData('text/plain','item')});el.addEventListener('click',()=>{selected=el;document.querySelectorAll('.item').forEach(x=>x.style.outline='');el.style.outline='2px solid #f3cc7a'})});
 document.querySelectorAll('.drop').forEach(zone=>{zone.addEventListener('dragover',e=>e.preventDefault());zone.addEventListener('drop',e=>{e.preventDefault();if(held)zone.querySelector('.dropcontent').appendChild(held);held=null});zone.addEventListener('click',()=>{if(selected){zone.querySelector('.dropcontent').appendChild(selected);selected.style.outline='';selected=null}})});
-function checkSort(){let all=[...document.querySelectorAll('.item')],placed=all.filter(x=>x.closest('.drop'));let right=placed.filter(x=>x.dataset.owner===x.closest('.drop').dataset.drop).length;let status=document.getElementById('sortStatus');if(placed.length<all.length){status.textContent='В лагерях '+placed.length+' из '+all.length+' предметов. Разложи все находки.';return}if(right===all.length){status.textContent='Идеально! Даже Рита одобрила распределение добычи. +100 к семейной мудрости.';document.getElementById('next4').classList.remove('hidden')}else status.textContent='Верно '+right+' из '+all.length+'. Подумай, кому действительно принадлежит каждый предмет.'}
+function checkSort(){let all=[...document.querySelectorAll('.item')],placed=all.filter(x=>x.closest('.drop'));let right=placed.filter(x=>x.dataset.owner===x.closest('.drop').dataset.drop).length;let status=document.getElementById('sortStatus');if(placed.length<all.length){status.textContent='В лагерях '+placed.length+' из '+all.length+' предметов. Разложи все находки.';return}if(right===all.length){status.textContent='Верно! Но вообще-то это все мои вещи';document.getElementById('next4').classList.remove('hidden')}else status.textContent='Верно '+right+' из '+all.length+'. Подумай, кому действительно принадлежит каждый предмет.'}
 const wishes=['Ты мой любимый человек ❤️','С тобой даже обычный день — приключение.','Ты сильнее, чем думаешь.','Пусть мечты становятся планами, а планы — победами.','Обожаю твою улыбку.','Ты мой дом, где бы мы ни были.','Пусть удача скачет рядом, как верный конь.','Я верю в тебя, даже когда ты сам сомневаешься.','С тобой мне спокойно и весело одновременно.','Ты умеешь сделать мой день лучше одним объятием.','Ты мой любимый напарник по всем жизненным квестам.','Пусть в жизни будет больше побед и меньше багов.','Марсель одобряет тебя. В основном. 🐈','Спасибо, что выбираешь меня каждый день.','И самое главное: я люблю тебя, Вадик! 💋'];
 let popped=0;const area=document.getElementById('balloonsArea');
 wishes.forEach((wish,i)=>{let b=document.createElement('button');b.className='balloon';b.setAttribute('aria-label','Лопнуть шарик '+(i+1));b.textContent='✦';b.onclick=()=>{if(b.classList.contains('popped'))return;b.classList.add('popped','revealed');b.textContent=wish;b.setAttribute('aria-label','Послание: '+wish);popped++;document.getElementById('balloonStatus').textContent='Открыто '+popped+' из '+wishes.length+' посланий';if(popped===wishes.length)document.getElementById('next5').classList.remove('hidden')};area.appendChild(b)});
