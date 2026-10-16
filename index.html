@@ -223,4 +223,129 @@ btn.textContent = '♫ Включить музыку';
 
 
 </script>
+ <style>
+  #quest-lock {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+      radial-gradient(ellipse at center, #3b3025 0%, #171511 65%, #0b0b09 100%);
+    color: #eee1c4;
+    font-family: Georgia, serif;
+    text-align: center;
+  }
+
+  #quest-lock .lock-card {
+    width: 100%;
+    max-width: 390px;
+    box-sizing: border-box;
+    padding: 32px 24px;
+    border: 1px solid #a88a51;
+    background: rgba(15, 14, 11, .94);
+    box-shadow: 0 0 45px #000;
+  }
+
+  #quest-lock .lock-symbol {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  #quest-lock h1 {
+    color: #d9bb79;
+    font-size: 27px;
+    margin: 0 0 12px;
+  }
+
+  #quest-lock p {
+    line-height: 1.6;
+  }
+
+  #quest-lock input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 22px 0 12px;
+    padding: 13px;
+    color: #f7e8c7;
+    background: #242019;
+    border: 1px solid #827047;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #quest-lock button {
+    width: 100%;
+    padding: 13px;
+    background: #8c6b35;
+    color: #fff6df;
+    border: 1px solid #c3a56a;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #quest-lock button:hover {
+    background: #a17c40;
+  }
+
+  #lock-message {
+    min-height: 24px;
+    color: #e5a17e;
+    font-size: 14px;
+  }
+</style>
+
+<div id="quest-lock">
+  <div class="lock-card">
+    <div class="lock-symbol">⚔️</div>
+    <h1>Тайный контракт</h1>
+    <p>Ведьмак, этот путь закрыт печатью.<br>
+    Назови пароль, чтобы начать испытание.</p>
+
+    <form id="lock-form">
+      <input
+        id="lock-password"
+        type="password"
+        placeholder="Введи пароль..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Снять печать</button>
+    </form>
+
+    <p id="lock-message" role="status"></p>
+    <small>✦ Только для посвящённых ✦</small>
+  </div>
+</div>
+
+<script>
+(() => {
+  // Придумай свой пароль и замени значение ниже.
+  const SECRET_PASSWORD = "pisec228";
+
+  const lock = document.getElementById("quest-lock");
+  const form = document.getElementById("lock-form");
+  const input = document.getElementById("lock-password");
+  const message = document.getElementById("lock-message");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (input.value === SECRET_PASSWORD) {
+      lock.remove();
+      document.body.style.overflow = "";
+    } else {
+      message.textContent = "Печать не снята. Попробуй ещё раз.";
+      input.value = "";
+      input.focus();
+    }
+  });
+
+  document.body.style.overflow = "hidden";
+  input.focus();
+})();
+</script>
 </body></html>
