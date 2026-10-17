@@ -348,308 +348,197 @@ btn.textContent = '♫ Включить музыку';
   input.focus();
 })();
 </script>
- <!-- СЕКРЕТНЫЙ КОНТРАКТ: начало -->
-<section id="wolf-bonus">
+ <!-- Секретный бонус ко дню рождения -->
+<section id="birthday-bonus">
+  <div class="bonus-divider"></div>
+
+  <p class="bonus-label">P.S. ТОЛЬКО ДЛЯ ИМЕНИННИКА</p>
+  <h2>🎁 Для тебя есть бонус...</h2>
+  <p class="bonus-subtitle">
+    Но этот маленький сюрприз не для всех.
+  </p>
+
+  <button id="bonus-open" class="bonus-button">
+    Открыть бонус ✨
+  </button>
+
+  <div id="bonus-warning" class="bonus-hidden">
+    <div class="bonus-icon">🔐</div>
+    <h3>Ты точно готов?</h3>
+    <p>
+      Сейчас ты узнаешь кое-что О-О-ОЧЕНЬ секретное.
+      Уверен, что готов раскрыть эту тайну?
+    </p>
+
+    <div class="bonus-actions">
+      <button id="bonus-no" class="bonus-button bonus-secondary">
+        Я передумал 🙈
+      </button>
+      <button id="bonus-yes" class="bonus-button">
+        Да, я готов!
+      </button>
+    </div>
+  </div>
+
+  <div id="bonus-secret" class="bonus-hidden">
+    <div class="bonus-icon">💌</div>
+    <h3>Секрет раскрыт… почти!</h3>
+    <p>
+      Любимый, открой Telegram.
+      Там тебя ждёт письмо от твоей жены ❤️
+    </p>
+    <p class="bonus-final">
+      Только для одного особенного человека.
+    </p>
+    <div class="bonus-telegram">✉️ Твоё письмо уже ждёт тебя</div>
+  </div>
+</section>
+
 <style>
-#wolf-bonus {
-  background: radial-gradient(ellipse at top,#303529,#10120f 75%);
-  color:#eee5d1; border:1px solid #766746; border-radius:10px;
-  padding:24px 16px; margin:28px 0; text-align:center;
-  font-family:Georgia,serif;
-}
-#wolf-bonus * {box-sizing:border-box}
-#wolf-bonus h2,#wolf-bonus h3 {color:#d6b36a}
-#wolf-bonus p {line-height:1.65}
-#wolf-bonus .wb-muted {color:#aaa99e;font-size:14px}
-#wolf-bonus .wb-panel {
-  max-width:560px;margin:16px auto;padding:18px 14px;
-  border:1px solid #4b4b3c;background:#10120f;border-radius:7px
-}
-#wolf-bonus .wb-btn {
-  display:block;width:100%;max-width:340px;margin:8px auto;
-  padding:12px;color:#18160f;background:#c5a363;
-  border:1px solid #e1c78f;border-radius:4px;
-  font:bold 15px Georgia,serif;cursor:pointer
-}
-#wolf-bonus .wb-btn.alt {color:#ded5c3;background:#25271f;border-color:#615a47}
-#wolf-bonus .wb-hidden {display:none!important}
-#wolf-bonus .wb-rune {font-size:42px}
-#wolf-bonus .wb-progress {height:6px;background:#36372e;margin:16px 0}
-#wolf-bonus .wb-progress span {display:block;height:100%;width:0;background:#d6b36a;transition:width .3s}
-#wolf-bonus .wb-arena {
-  min-height:210px;position:relative;overflow:hidden;
-  border:1px solid #655a3f;border-radius:7px;
-  background:radial-gradient(ellipse,#303628,#12150f);margin:14px 0
-}
-#wolf-bonus .wb-target {
-  position:absolute;max-width:47%;padding:8px 5px;
-  color:#f0d59b;background:#29251d;border:1px solid #c7a86b;
-  border-radius:5px;font-size:12px;cursor:pointer
-}
-#wolf-bonus .wb-maze {
-  display:grid;grid-template-columns:repeat(5, minmax(0,1fr));
-  gap:4px;max-width:290px;margin:16px auto
-}
-#wolf-bonus .wb-cell {
-  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
-  border:1px solid #3b4232;border-radius:3px;background:#252a20;font-size:19px
-}
-#wolf-bonus .wb-wall {background:#090b09}
-#wolf-bonus .wb-controls {
-  display:grid;grid-template-columns:repeat(3,48px);
-  justify-content:center;gap:5px
-}
-#wolf-bonus .wb-controls button {
-  padding:10px;color:#f0e2c2;background:#34382c;
-  border:1px solid #81704b;border-radius:5px;font-size:18px;cursor:pointer
-}
-#wolf-bonus .wb-shards {display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}
-#wolf-bonus .wb-shard {
-  padding:12px;font-size:32px;color:#f0d59b;background:#29271e;
-  border:1px solid #857044;border-radius:8px;cursor:pointer
-}
-#wolf-bonus .wb-medallion {font-size:72px;filter:drop-shadow(0 0 12px #d6b36a99)}
-#wolf-bonus .wb-message {min-height:24px;color:#e6cb91}
+  #birthday-bonus {
+    max-width: 520px;
+    margin: 70px auto 25px;
+    padding: 25px 20px;
+    text-align: center;
+    color: var(--text-color, #eeeeee);
+    font-family: inherit;
+  }
+
+  .bonus-divider {
+    width: 65px;
+    height: 2px;
+    margin: 0 auto 28px;
+    background: #c9a66b;
+  }
+
+  .bonus-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    opacity: .7;
+  }
+
+  #birthday-bonus h2 {
+    font-size: 25px;
+    color: #d8b779;
+  }
+
+  #birthday-bonus h3 {
+    font-size: 23px;
+    margin: 12px 0;
+  }
+
+  .bonus-subtitle,
+  #birthday-bonus #bonus-warning p,
+  #birthday-bonus #bonus-secret p {
+    line-height: 1.7;
+    opacity: .85;
+  }
+
+  .bonus-button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin: 8px 4px;
+    background: #d8b779;
+    color: #211b15;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s, opacity .2s;
+  }
+
+  .bonus-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .bonus-secondary {
+    background: transparent;
+    border: 1px solid #a99b84;
+    color: inherit;
+  }
+
+  .bonus-hidden {
+    display: none;
+  }
+
+  .bonus-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+
+  .bonus-icon {
+    font-size: 38px;
+    margin-top: 25px;
+  }
+
+  #bonus-secret {
+    animation: bonusReveal .7s ease both;
+  }
+
+  .bonus-final {
+    color: #d8b779;
+    font-weight: 600;
+  }
+
+  .bonus-telegram {
+    margin-top: 22px;
+    padding: 16px;
+    border: 1px solid #d8b779;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  @keyframes bonusReveal {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 420px) {
+    #birthday-bonus h2 {
+      font-size: 22px;
+    }
+
+    .bonus-actions {
+      flex-direction: column;
+    }
+
+    .bonus-actions .bonus-button {
+      width: 100%;
+      margin: 4px 0;
+    }
+  }
 </style>
 
-<div class="wb-rune">✦</div>
-<p class="wb-muted">СЕКРЕТНЫЙ КОНТРАКТ</p>
-<h2>Последнее испытание</h2>
-<p>Думаешь, все контракты выполнены, ведьмак?</p>
-<p class="wb-muted">Впереди ещё одно испытание. Оно не потребует меча, эликсиров или ловкости. Но может оказаться самым тяжёлым из всех.</p>
-
-<button class="wb-btn" id="wbAccept">Принять дополнительный контракт</button>
-<button class="wb-btn alt" id="wbDecline">Нет, на сегодня хватит</button>
-
-<div id="wbWarning" class="wb-panel wb-hidden">
-  <div class="wb-rune">⚠</div>
-  <h3>Ты уверен?</h3>
-  <p>Это испытание может оказаться морально тяжёлым. Оно заставит посмотреть на вещи, от которых порой хочется отвернуться.</p>
-  <p>Ты действительно готов продолжить?</p>
-  <button class="wb-btn" id="wbConfirm">Да. Я готов.</button>
-  <button class="wb-btn alt" id="wbCancel">Лучше не сейчас</button>
-</div>
-
-<div id="wbFinalWarning" class="wb-panel wb-hidden">
-  <h3>Последнее предупреждение</h3>
-  <p>За этой печатью скрывается противник, которого нельзя победить обычным мечом. Придётся встретиться с собственными мыслями и взглянуть на себя иначе.</p>
-  <p><b>Ведьмак, ты точно принимаешь этот контракт?</b></p>
-  <button class="wb-btn" id="wbOpen">Да. Открыть контракт.</button>
-  <button class="wb-btn alt" id="wbBack">Я передумал</button>
-</div>
-
-<div id="wbDeclined" class="wb-panel wb-hidden">
-  <h3>Контракт останется ждать</h3>
-  <p>Даже ведьмак имеет право выбрать, когда ему отправляться в путь.</p>
-  <button class="wb-btn alt" id="wbReturn">Вернуться</button>
-</div>
-
-<div id="wbGame" class="wb-hidden">
-  <div class="wb-progress"><span id="wbProgress"></span></div>
-  <p class="wb-muted" id="wbStageLabel">Испытание 1 из 3</p>
-
-  <div id="wbStage1" class="wb-panel">
-    <h3>I. Самокритика</h3>
-    <p>Тени нашёптывают ведьмаку, что он недостаточно хорош. Нажми на все шесть негативных мыслей, чтобы развеять их.</p>
-    <p>Развеяно: <b id="wbCount">0</b> / 6</p>
-    <div class="wb-arena" id="wbArena"></div>
-    <p class="wb-message" id="wbMsg1" aria-live="polite"></p>
-  </div>
-
-  <div id="wbStage2" class="wb-panel wb-hidden">
-    <h3>II. Сравнение с другими</h3>
-    <p>Чужой путь — не твоя карта. Проведи ведьмака к выходу. Стены не пропускают.</p>
-    <p class="wb-muted">Управление: стрелки клавиатуры или кнопки ниже.</p>
-    <div class="wb-maze" id="wbMaze"></div>
-    <div class="wb-controls">
-      <span></span><button data-wbmove="0,-1" aria-label="Вверх">↑</button><span></span>
-      <button data-wbmove="-1,0" aria-label="Влево">←</button>
-      <button data-wbmove="0,1" aria-label="Вниз">↓</button>
-      <button data-wbmove="1,0" aria-label="Вправо">→</button>
-    </div>
-    <p class="wb-message" id="wbMsg2" aria-live="polite"></p>
-  </div>
-
-  <div id="wbStage3" class="wb-panel wb-hidden">
-    <h3>III. Обесценивание себя</h3>
-    <p>Медальон разбит. Собери три осколка, чтобы вернуть ему силу.</p>
-    <div class="wb-shards">
-      <button class="wb-shard" data-wbshard="0" aria-label="Осколок первый">◇</button>
-      <button class="wb-shard" data-wbshard="1" aria-label="Осколок второй">◇</button>
-      <button class="wb-shard" data-wbshard="2" aria-label="Осколок третий">◇</button>
-    </div>
-    <p class="wb-message" id="wbMsg3" aria-live="polite"></p>
-  </div>
-</div>
-
-<div id="wbEnding" class="wb-panel wb-hidden">
-  <div class="wb-medallion">🐺</div>
-  <h2>Контракт выполнен</h2>
-  <p>Самокритика повержена.<br>Сравнение потеряло след.<br>Медальон восстановлен.</p>
-  <p style="font-size:18px;color:#e8ce91">«Ты не обязан быть идеальным, чтобы быть достойным уважения».</p>
-  <p>Ошибки не делают тебя слабым.<br>Отдых — не поражение.<br>А собственная ценность не нуждается в ежедневном доказательстве.</p>
-  <p class="wb-muted">Не становись собственным чудовищем.</p>
-  <button class="wb-btn" id="wbReplay">Пройти контракт ещё раз</button>
-</div>
-
 <script>
-(() => {
-  const root = document.getElementById("wolf-bonus");
-  if (!root || root.dataset.ready) return;
-  root.dataset.ready = "1";
-  const $ = id => root.querySelector("#" + id);
+  const bonusOpen = document.getElementById("bonus-open");
+  const bonusWarning = document.getElementById("bonus-warning");
+  const bonusSecret = document.getElementById("bonus-secret");
+  const bonusNo = document.getElementById("bonus-no");
+  const bonusYes = document.getElementById("bonus-yes");
 
-  const panelIds = ["wbWarning","wbFinalWarning","wbDeclined","wbGame","wbEnding"];
-  let stage = 0, hits = 0, player = {x:0,y:0}, shards = new Set();
+  bonusOpen.addEventListener("click", () => {
+    bonusOpen.style.display = "none";
+    bonusWarning.style.display = "block";
+  });
 
-  // # — стена, . — проход, E — выход
-  const map = ["...##","##...","...#.","...#.","...#E"];
-  const thoughts = [
-    "Я недостаточно хорош","Я опять ошибся",
-    "У меня не получится","Я должен быть лучше",
-    "Я всё делаю не так","Я недостаточно силён"
-  ];
+  bonusNo.addEventListener("click", () => {
+    bonusWarning.style.display = "none";
+    bonusOpen.style.display = "inline-block";
+  });
 
-  function show(id) {
-    panelIds.forEach(pid => $(pid).classList.add("wb-hidden"));
-    if (id) $(id).classList.remove("wb-hidden");
-  }
-
-  function setStage(n) {
-    stage = n;
-    [1,2,3].forEach(i => $("wbStage"+i).classList.toggle("wb-hidden",i!==n));
-    $("wbStageLabel").textContent = "Испытание "+n+" из 3";
-    $("wbProgress").style.width = ((n-1)/3*100)+"%";
-  }
-
-  function startGame() {
-    hits = 0;
-    shards.clear();
-    player = {x:0,y:0};
-    $("wbCount").textContent = "0";
-    $("wbMsg1").textContent = "";
-    $("wbMsg2").textContent = "";
-    $("wbMsg3").textContent = "";
-    root.querySelectorAll("[data-wbshard]").forEach(b => {
-      b.disabled = false; b.textContent = "◇"; b.style.opacity = "1";
-    });
-    show("wbGame");
-    setStage(1);
-    makeTargets();
-    drawMaze();
-  }
-
-  function makeTargets() {
-    const arena = $("wbArena");
-    arena.innerHTML = "";
-    thoughts.forEach((word,i) => {
-      const b = document.createElement("button");
-      b.className = "wb-target";
-      b.textContent = word;
-      b.style.left = (2+(i%3)*33)+"%";
-      b.style.top = (8+Math.floor(i/3)*48)+"%";
-      b.addEventListener("click", () => {
-        if (b.disabled || stage!==1) return;
-        b.disabled = true;
-        b.remove();
-        hits++;
-        $("wbCount").textContent = hits;
-        $("wbMsg1").textContent = [
-          "Не каждая мысль говорит правду.",
-          "Ошибка — событие, а не приговор.",
-          "Тень становится слабее."
-        ][hits%3];
-        if (hits===6) {
-          $("wbMsg1").textContent = "Тени рассеялись. Путь открыт.";
-          $("wbProgress").style.width = "33%";
-          setTimeout(() => setStage(2),650);
-        }
-      });
-      arena.appendChild(b);
-    });
-  }
-
-  function drawMaze() {
-    const el = $("wbMaze");
-    el.innerHTML = "";
-    map.forEach((row,y) => [...row].forEach((cell,x) => {
-      const d = document.createElement("div");
-      d.className = "wb-cell";
-      if (cell==="#") d.classList.add("wb-wall");
-      if (player.x===x && player.y===y) d.textContent = "🐺";
-      else if (cell==="E") d.textContent = "✦";
-      else if (cell==="#") d.textContent = "";
-      else d.textContent = "·";
-      el.appendChild(d);
-    }));
-  }
-
-  function move(dx,dy) {
-    if (stage!==2) return;
-    const x=player.x+dx, y=player.y+dy;
-    if (y<0 || y>=map.length || x<0 || x>=map[0].length) return;
-    if (map[y][x]==="#") {
-      $("wbMsg2").textContent = "Тупик. Попробуй другой путь.";
-      return;
-    }
-    player={x,y};
-    drawMaze();
-    if (map[y][x]==="E") {
-      $("wbMsg2").textContent = "Ты идёшь своим путём. Выход найден.";
-      $("wbProgress").style.width="66%";
-      setTimeout(()=>setStage(3),650);
-    } else {
-      $("wbMsg2").textContent = "Не сравнивай свой путь с чужим.";
-    }
-  }
-
-  root.querySelectorAll("[data-wbmove]").forEach(b => {
-    b.addEventListener("click",()=>{
-      const [dx,dy]=b.dataset.wbmove.split(",").map(Number);
-      move(dx,dy);
-    });
-  });
-
-  document.addEventListener("keydown",e=>{
-    if (!root.isConnected || stage!==2 || root.closest(".wb-hidden")) return;
-    const dirs={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]};
-    if(dirs[e.key]) {e.preventDefault();move(...dirs[e.key]);}
-  });
-
-  root.querySelectorAll("[data-wbshard]").forEach(b=>{
-    b.addEventListener("click",()=>{
-      if(stage!==3) return;
-      const id=b.dataset.wbshard;
-      if(shards.has(id)) return;
-      shards.add(id);
-      b.textContent="✦"; b.disabled=true; b.style.opacity=".55";
-      const qualities=[
-        "Стойкость — ты уже преодолел немало.",
-        "Смелость — ты продолжаешь, даже когда трудно.",
-        "Чувство юмора — сила тоже бывает лёгкой."
-      ];
-      $("wbMsg3").textContent=qualities[Number(id)];
-      if(shards.size===3) {
-        $("wbProgress").style.width="100%";
-        setTimeout(()=>show("wbEnding"),700);
-      }
-    });
-  });
-
-  $("wbAccept").addEventListener("click",()=>show("wbWarning"));
-  $("wbDecline").addEventListener("click",()=>show("wbDeclined"));
-  $("wbConfirm").addEventListener("click",()=>show("wbFinalWarning"));
-  $("wbCancel").addEventListener("click",()=>show("wbDeclined"));
-  $("wbBack").addEventListener("click",()=>show("wbDeclined"));
-  $("wbReturn").addEventListener("click",()=>show(null));
-  $("wbOpen").addEventListener("click",()=>{
-    startGame();
-    $("wbGame").scrollIntoView({behavior:"smooth",block:"start"});
-  });
-  $("wbReplay").addEventListener("click",startGame);
-})();
+  bonusYes.addEventListener("click", () => {
+    bonusWarning.style.display = "none";
+    bonusSecret.style.display = "block";
+  });
 </script>
-</section>
-<!-- СЕКРЕТНЫЙ КОНТРАКТ: конец -->
 
 </body></html>
